@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            /* Form outline */
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+            width: 500px;
+            margin-top: 50px;
+        }
+        table{
+            margin-left: 150px;
+        }
+        img{
+            float: left;
+        }
+        form {
+            /* Center the form on the page */
+            margin: 0 auto;
+            width: 400px;
+            margin-left:100px;
+            margin-top:20px;
+            margin-bottom:20px;
+
+        }
+        ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        }
+
+        form li + li {
+        margin-top: 1em;
+        }
+
+        label {
+        /* Uniform size & alignment */
+        display: inline-block;
+        width: 90px;
+        text-align: right;
+        }
+
+        .button {
+        /* Align buttons with the text fields */
+        padding-left: 90px; /* same size as the label elements */
+        }
+
+        button {
+        /* This extra margin represent roughly the same space as the space
+            between the labels and their text fields */
+        margin-left: .5em;
+        }
+    </style>
+    <script>
+        function validate(){
+            var name = document.register.user_name.value;
+            var age = document.register.user_age.value;
+            // var email = document.register.user_email.value;
+            if(!name.match(/^[A-Za-z]+$/)){
+                alert("Name should only alphabets.")
+            }
+            if(!age.match(/^[0-9]+$/) || age < 18){
+                alert("Age should be equal to or greater than 18.")
+            }
+        }
+    </script>
+</head>
+<body>
+    <table class="heading">
+        <tr>
+            <td>
+                <img src="logo.png" width="50">
+            </td>
+            <td><h2>Xena Events</h2></td>
+        </tr>  
+
+    </table>
+        
+    <form name="register" onsubmit="return(validate())">
+        <ul>
+            <li>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="user_name" required>
+            </li>
+            <li>
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="user_age" required>
+              </li>
+            <li>
+              <label for="mail">Email ID:</label>
+              <input type="email" id="mail" name="user_email" required>
+            </li>
+            <li>
+              <label for="city">City:</label>
+              <input list="cities" id="city" name="user_city" required>
+              <datalist id="cities">
+                  <option value="Rajkot">
+                  <option value="Vizag">
+                  <option value="Bangalore">
+              </datalist>
+            </li>
+            <li class="button">
+                <button type="submit">Submit</button>
+              </li>
+           </ul>
+    </form>
+    
+</body>
+</html>

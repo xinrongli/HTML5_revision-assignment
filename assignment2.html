@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    /* #top{
+        background-color: aqua;
+    }
+    #bottom{
+        background-color:blueviolet;
+    } */
+</style>
+<body>
+    <div id="top">
+        <img width="50px" src="logo1.png">
+        <h1>Awesome Online videos</h1>
+    </div>
+    
+    <div id="bottom">
+        <video id="video" width="500">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <br>
+        <button type="button" onclick="play()">play</button>
+        <button type="button" onclick="pause()">pause</button>
+    </div>
+    <script>
+        var video = document.getElementById("video")
+        function play(){
+            video.play()
+        }
+        function pause(){
+            video.pause()
+        }
+    </script>
+</body>
+</html>
